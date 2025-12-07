@@ -7,7 +7,7 @@ for num in range(100):
     dial.append(num)
 #print(dial)
 
-position = int(input("What is the starting position")) + 1
+position = int(input("What is the starting number of the dial? ")) + 1
 #print(position)
 
 codes = []
@@ -23,3 +23,16 @@ except FileNotFoundError:
     print("Error: The file 'ay_1_codes.txt' was not found.")
 
     #for each item in dictionary remove + or - and turn dial 
+for code in codes:
+    st_code = str(code)
+    if st_code[0] == "R":
+        #print("This is Rigth")
+        num_code = int(st_code[1:])
+        if num_code < position:
+            position = position - num_code
+
+        print(num_code)
+    elif st_code[0] == "L":
+        print("This is Left")
+    else:
+        print("This is not left or right")
