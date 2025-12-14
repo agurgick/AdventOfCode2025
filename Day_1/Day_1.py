@@ -32,6 +32,7 @@ for code in codes:
             position = position - num_code
 
         print(num_code)
+        print(position)
     elif st_code[0] == "L":
         print("This is Left")
     else:
